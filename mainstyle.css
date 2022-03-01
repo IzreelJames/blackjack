@@ -1,0 +1,176 @@
+*, *::after,*::before {
+ box-sizing: border-box;
+}
+
+body {
+    margin: 0 ;
+    display: grid;
+    grid-template-columns: repeat(2,4rem);
+    grid-template-rows: 7ren 2rem 7rem;
+    gap: 0.5rem;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+h1 {
+    display: flex ;
+    justify-content: center;
+    font-family: fantasy;
+}
+
+.deck {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 3rem;
+    border-radius: .5rem;
+    color: azure;
+    user-select: none;
+}
+
+
+
+.card-slot {
+    position: relative;
+    height: 8vw;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 3rem;
+    border-radius: .5rem;
+    user-select: none;
+}
+
+.card-slot::before,.card-slot::after{
+    position:absolute;
+content: attr(data-value);
+font-size: 1rem;
+}
+
+.card-slot::before{
+top: .5rem ;
+left: .5rem;
+}
+
+.card-slot::after{
+bottom: .5rem;
+right: .5rem;
+transform: rotate(180deg);
+}
+
+.computer-deck {
+    background-image: url(images/cards/back.png);
+    /* margin-top: 43px; */
+    background-color: coral;
+}
+
+.player-deck {
+    /* margin-top: 47px; */
+    background-image: url(images/cards/back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color: darkcyan; */
+}
+
+#text-area{
+    grid-column: span 2;
+    display:contents;
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+    border: 1px solid black;
+    width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    font-family: Impact;
+    position: relative;
+    width: 250px;
+    height: 80px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 40px;
+}
+
+button::before {
+    content: '';
+    background: rgba(144, 133, 15, 0.83);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    /* filter: url('#wave'); */
+}
+
+button:hover {
+    animation: squish 0.5s;
+}
+button:hover:before {
+    background: linear-gradient(to right, rgb(216, 139, 51), rgb(39, 128, 180), rgb(2, 2, 53));
+    /* filter: blur(10px) contrast(45); */
+    filter: url('#wave');
+}
+@keyframes squish {
+    0% {
+        transform: scaleY(1);
+    }
+    60% {
+        transform: scaleY(1.5);
+    }
+    80% {
+        transform: scaleY(0.9);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+/* body{
+background-image: url(images/esteban-lopez-OfdFHy1zxjQ-unsplash.jpg);
+background-position: center;
+background-repeat: no-repeat;
+} */
+
+
+#canvas1{
+    background-image: url(images/hjm-chair+table/hjm-chair+table.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: ridge;
+    width: 600px;
+    height: 600px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.commands {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.commands, .select, .optioon{
+    font-size: 25px;
+}

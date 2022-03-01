@@ -1,0 +1,90 @@
+.container {
+    border: 1px solid black;
+    width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    font-family: Impact;
+    position: relative;
+    width: 250px;
+    height: 80px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 40px;
+}
+
+button::before {
+    content: '';
+    background: rgba(144, 133, 15, 0.83);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    /* filter: url('#wave'); */
+}
+
+button:hover {
+    animation: squish 0.5s;
+}
+button:hover:before {
+    background: linear-gradient(to right, rgb(216, 139, 51), rgb(39, 128, 180), rgb(2, 2, 53));
+    /* filter: blur(10px) contrast(45); */
+    filter: url('#wave');
+}
+@keyframes squish {
+    0% {
+        transform: scaleY(1);
+    }
+    60% {
+        transform: scaleY(1.5);
+    }
+    80% {
+        transform: scaleY(0.9);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+body{
+background-image: url(images/esteban-lopez-OfdFHy1zxjQ-unsplash.jpg);
+background-position: center;
+background-repeat: no-repeat;
+}
+
+
+#canvas1{
+    background-image: url(images/hjm-chair+table/hjm-chair+table.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: ridge;
+    width: 600px;
+    height: 600px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.commands {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.commands, .select, .optioon{
+    font-size: 25px;
+}

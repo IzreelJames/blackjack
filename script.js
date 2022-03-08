@@ -15,7 +15,7 @@ const spriteWidth = 79;
 const spriteHeight = 69;
 
 let gameFrame = 0;
-const staggerFrames = 37;
+const staggerFrames = 17;
 const spriteAnimations = [];
 const animationStates = [
     {

@@ -2,7 +2,7 @@
 let suits = ['♥', '♣', '♦', '♠'];
 let values = ['A', 'K', 'Q', 'J',
   '10', '9', '8', '7', '6',
-  '5', '4', '3', '2', '1'
+  '5', '4', '3', '2'
 ];
 
 let textArea = document.getElementById('text-area');
@@ -106,9 +106,38 @@ function checkForEndOfGame(){
 function getCardString(card) {
   return card.value + " of " + card.suit;
 }
+
+// function getCardNumericValue(card){
+//   if(card.value == '1'){
+//     return 1
+//   } if (card.value == '2'){
+//     return 2
+//   }
+//   if (card.value == '3'){
+//     return 3
+//   } if (card.value == '4'){
+//     return 4
+//   } if (card.value == '5'){
+//     return 5
+//   } if (card.value == '6'){
+//     return 6
+//   } if (card.value == '7'){
+//     return 7
+//   } if (card.value == '8'){
+//     return 8
+//   } if (card.value == '9'){
+//     return 9
+//   } if (card.value == 'A' && score > 21){
+//     return 1
+//   } else if (card.value == 'A' && score < 21){
+//     return 11
+//   } else {
+//     return 10
+//   }
+// }
 function getCardNumericValue(card){
   switch(card.value){
-    case '1':
+    case 'A':
       return 1;
     case '2':
       return 2;
@@ -126,9 +155,16 @@ function getCardNumericValue(card){
       return 8;
     case '9':
       return 9;
+      // case 'A':
+      //   return 1 
     default:
       return 10; 
   }
+  // if(card.value == 'A' && score > 1){
+  //   return 1
+  // } else if (card.value == 'A' && score < 21){
+  //   return 11
+  // }
 }
 function showStatus()
 {
@@ -171,22 +207,29 @@ function showStatus()
   }
 }
 
+
 function getScore(cardArray){
   let score = 0;
   let hasAce = false;
   for(let i=0; i<cardArray.length; i++){
     let card = cardArray[i];
     score += getCardNumericValue(card);
-    if(card.value == 'Ace'){
+    if(card.value == 'A'){
       hasAce = true;
     }
     
-    if(hasAce && score+10<=21){
-      return score+10;
+    if(hasAce && score <= 11 ){
+  // alert("Do you want your Ace to count as a value of 1 or 11?")
+      return score + 10;
     }
+  } 
+  if (hasAce && score ){
+
+  //   return score ;
   }
    return score; 
 }
+
 
 function updateScores(){
   dealerScore = getScore(dealerCards);

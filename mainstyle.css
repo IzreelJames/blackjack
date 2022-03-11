@@ -10,6 +10,7 @@ body {
     gap: 0.5rem;
     justify-content: center;
     padding-top: 1rem;
+    background-color: lavender;
 }
 
 h1 {
@@ -18,7 +19,7 @@ h1 {
     font-family: fantasy;
 }
 
-.deck {
+.cardsuits {
     height: 100%;
     width: 100%;
     border: 1px solid black;
@@ -31,9 +32,30 @@ h1 {
     user-select: none;
 }
 
+#pluckedImage{
+    margin-top: 15px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 3rem;
+    border-radius: .5rem;
+    color: azure;
+    user-select: none;
+}
+
+#pluckedImage{
+    cursor: pointer;
+}
+
+#pluckedImage:hover {
+    transform: translate3d(0px, 8px, 0px);
+}
 
 
-.card-slot {
+.cardsuit {
     position: relative;
     height: 8vw;
     width: 100%;
@@ -46,30 +68,38 @@ h1 {
     user-select: none;
 }
 
-.card-slot::before,.card-slot::after{
+.cardsuit{
+    cursor: pointer;
+}
+
+.cardsuit:hover{
+transform: translate3d(0px, -8px, 0px);
+}
+
+.cardsuit::before,.cardsuit::after{
     position:absolute;
 content: attr(data-value);
 font-size: 1rem;
 }
 
-.card-slot::before{
+.cardsuit::before{
 top: .5rem ;
 left: .5rem;
 }
 
-.card-slot::after{
+.cardsuit::after{
 bottom: .5rem;
 right: .5rem;
 transform: rotate(180deg);
 }
 
-.computer-deck {
+.cardsuit {
     background-image: url(images/cards/back.png);
     /* margin-top: 43px; */
     background-color: coral;
 }
 
-.player-deck {
+.cardsuit {
     /* margin-top: 47px; */
     background-image: url(images/cards/back.png);
     background-position: center;
@@ -82,6 +112,7 @@ transform: rotate(180deg);
     display:contents;
     justify-content: center;
     align-content: center;
+    color: azure;
 }
 
 .container {

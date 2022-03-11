@@ -5,6 +5,22 @@ let values = ['A', 'K', 'Q', 'J',
   '5', '4', '3', '2'
 ];
 
+const plucked = {
+  "A": "images/cards/1.png",
+  "K": "images/cards/7.png",
+  "Q": "images/cards/9.png",
+  "J": "images/cards/16.png",
+  "10": "images/cards/19.png",
+  "9": "images/cards/22.png" ,
+  "8": "images/cards/27.png" ,
+  "7": "images/cards/32.png",
+  "6": "images/cards/35.png",
+  "5": "images/cards/38.png" ,
+  "4": "images/cards/43.png",
+  "3": "images/cards/46.png" ,
+  "2": "images/cards/50.png"
+}
+
 let textArea = document.getElementById('text-area');
 let newGameButton = document.getElementById('new-game-button');
 let hitButton = document.getElementById('hit-button');
@@ -70,6 +86,19 @@ stayButton.addEventListener('click', function(){
   checkForEndOfGame();
   showStatus();
 });
+
+const pluckedCard = (cardsuit) => {
+  console.log(cardsuit)
+  let cardsuits = document.querySelector(".cardsuits");
+  cardsuit.style.display = "none";
+
+  //show pluckedCard
+  // let 
+
+
+//the user plugged cards
+document.getElementById("pluckedImage").src = plucked[cardsuit]
+} 
 
 function checkForEndOfGame(){
   updateScores();
@@ -218,14 +247,14 @@ function getScore(cardArray){
       hasAce = true;
     }
     
-    if(hasAce && score <= 11 ){
+    if(hasAce == true && score == 11 ){
   // alert("Do you want your Ace to count as a value of 1 or 11?")
       return score + 10;
     }
   } 
-  if (hasAce && score ){
+  if (hasAce == true && score > 10){
 
-  //   return score ;
+return score 
   }
    return score; 
 }

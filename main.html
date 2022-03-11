@@ -9,7 +9,7 @@
     <title>BlackJack</title>
     <!-- <script>alert('Are you feeling blackjack 21 lucky?')</script> -->
 </head>
-<body>
+<body style="background-color: lavender; background-image: url(images/esteban-lopez-OfdFHy1zxjQ-unsplash.jpg); background-position: left;" >
     <!-- <h1>BlackJack</h1> -->
 
     <!-- <div class="container px-4">
@@ -20,8 +20,8 @@
         </div>
     </div> -->
 
-    <div class="container">
-        <h1 class="text-area">BlackJack</h1>
+    <div class="container" style="display: grid; border: none;"  >
+        <h1 class="text-area"  style="color: white;">BlackJack</h1>
         <div class="row">
           <div class="col align-self-start" id="text-area">
            
@@ -35,10 +35,79 @@
         </div>
       </div>
 
+
+      <!-- cards div -->
+      <div class="container mt-5 " style="display: contents;">
+      <div class="cardsuits">
+          <div class="cardsuit A">
+              <img src="images/cards/1.png" alt="">
+          </div>
+          <div class="cardsuit K">
+              <img src="images/cards/7.png" alt="">
+          </div>
+          <div class="cardsuit Q">
+              <img src="images/cards/9.png" alt="">
+          </div>
+          <div class="cardsuit J">
+              <img src="images/cards/16.png" alt="">
+          </div>
+          <div class="cardsuit 10">
+              <img src="images/cards/19.png" alt="">
+          </div>
+          <div class="cardsuit 9">
+              <img src="images/cards/22.png" alt="">
+          </div>
+          <div class="cardsuit 8">
+              <img src="images/cards/27.png" alt="">
+          </div>
+          <div class="cardsuit 7">
+              <img src="images/cards/32.png" alt="">
+          </div>
+          <div class="cardsuit 6">
+              <img src="images/cards/35.png" alt="">
+          </div>
+          <div class="cardsuit 5">
+              <img src="images/cards/38.png" alt="">
+          </div>
+          <div class="cardsuit 4">
+              <img src="images/cards/43.png" alt="">
+          </div>
+          <div class="cardsuit 3">
+              <img src="images/cards/46.png" alt="">
+          </div>
+          <div class="cardsuit 2">
+              <img src="images/cards/50.png" alt="">
+          </div>
+      </div>
+    </div>
+
+    <div class="context">
+        <div class="playerHand">
+            <h1>YOU PLUCKED</h1>
+            <div class="handImageContainer">
+                <img  id="pluckedImage" src="images/cards/46.png" alt="">
+            </div>
+        </div>
+        <!-- <div class="referee">
+            <div class="decision">
+                <h1>YOU WIND</h1>
+            </div>
+            <div class="botHand">
+                <h1>Computer PLUCKED</h1>
+                <div class="handImageContainer">
+                    <img src="images/cards/22.png" alt="">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
     <!-- <p id="text-area">Let's play Blackjack</p> -->
 
 
-    <div class="container" style="font-size: xx-large; display: inline;">
+    <div class="container" style="font-size: xx-large; display: inline; border: none;">
         <div class="button" style="width: min-content;">
         <button id="new-game-button">New Game</button>
         <button id="hit-button">Hit</button>
@@ -48,16 +117,16 @@
     
 
 
-    <div class="computer-deck deck"></div>
+    <!-- <div class="computer-deck deck"></div>
     <div class="computer-card-slot card-slot" data-value="K ♦" style="color: red;"></div>
     <!-- <div class="card red" data-value="9 ♣">
         ♣ -->
 
 
-   
+<!--    
 
     <div class="player-deck deck">21</div>
-    <div class="player-card-slot card-slot" data-value="A♣"></div> 
+    <div class="player-card-slot card-slot" data-value="A♣"></div>  --> 
 
 
     <svg>

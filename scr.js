@@ -88,9 +88,9 @@ stayButton.addEventListener('click', function(){
 });
 
 const pluckedCard = (cardsuit) => {
-  console.log(cardsuit)
+  // console.log(cardsuit)
   let cardsuits = document.querySelector(".cardsuits");
-  cardsuit.style.display = "none";
+  // cardsuit.style.display = "none"
 
   //show pluckedCard
   // let 
@@ -136,6 +136,13 @@ function getCardString(card) {
   return card.value + " of " + card.suit;
 }
 
+
+function getHTML() {
+  const cardDiv = document.createElement('div')
+  cardDiv.textArea.innerText = this.suit
+  cardDiv.classList.add('cardsuit')
+  cardDiv.dataset.value = src.plucked[cardsuit]
+}
 // function getCardNumericValue(card){
 //   if(card.value == '1'){
 //     return 1
@@ -189,11 +196,6 @@ function getCardNumericValue(card){
     default:
       return 10; 
   }
-  // if(card.value == 'A' && score > 1){
-  //   return 1
-  // } else if (card.value == 'A' && score < 21){
-  //   return 11
-  // }
 }
 function showStatus()
 {
@@ -202,6 +204,7 @@ function showStatus()
     textArea.innerText = 'Welcome to Blackjack!';
     return; 
   }
+    
   
   let dealerCardString = '';
   for(let i=0; i<dealerCards.length; i++)
@@ -252,9 +255,9 @@ function getScore(cardArray){
       return score + 10;
     }
   } 
-  if (hasAce == true && score > 10){
+  if (hasAce == true && score + 10 < 21){
 
-return score 
+return score + 10
   }
    return score; 
 }
